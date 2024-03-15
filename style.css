@@ -1,0 +1,16 @@
+
+
+/* Efeito de movimento para o botão de adicionar ao carrinho */
+.add-to-cart-btn {
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Adicionando a transição para mudança de cor de fundo */
+}
+
+/* Efeito de movimento quando o mouse passa sobre o botão de adicionar ao carrinho */
+.add-to-cart-btn:hover {
+    transform: scale(1.1); /* Aumenta o tamanho do botão em 10% */
+}
+
+/* Efeito de mudança de cor de fundo quando o botão de adicionar ao carrinho é clicado */
+.add-to-cart-btn:active {
+    background-color: #4a5568; /* Altere para a cor desejada */
+}
