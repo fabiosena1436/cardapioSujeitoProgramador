@@ -194,19 +194,18 @@ checkoutBtn.addEventListener("click", function () {
     // Enviar o pedido para a api do whats
     const cartItems = cart.map((item) => {
         return (
-            `
-            ${item.name} Quantidade: (${item.quantity}) Preço: R$:${item.price}  |  `
+            `${item.name} | Quantidade: ${item.quantity} | Preço: R$:${item.price}\n`
         )
-    }).join("\n")
+    }).join("");
     const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
     const paymentValue = paymentInput.value;
-    const message = encodeURIComponent(cartItems)
-    const phone = "18981579318"
-
-    window.open(`https://wa.me/${phone}\n\n?text=${message}\n\nEndereço: ${adderessInput.value}\n\nForma de pagamento: ${paymentValue}\n\n|Total: R$ ${total.toFixed(2)}`, "_blank")
-
-    cart = []
-    updateCartModal()
+    const message = encodeURIComponent(cartItems);
+    const phone = "18981579318";
+    
+    window.open(`https://wa.me/${phone}?text=${message}%0ATotal: R$ ${total.toFixed(2)}%0A%0AForma de pagamento: ${paymentValue}%0AEndereço: ${adderessInput.value}`, "_blank");
+    
+    cart = [];
+    updateCartModal();
 })
 
 
