@@ -194,7 +194,7 @@ checkoutBtn.addEventListener("click", function () {
     // Enviar o pedido para a api do whats
     const cartItems = cart.map((item) => {
         return (
-            `${item.name} | Quantidade: ${item.quantity} | Preço: R$:${item.price}\n`
+            `${item.name}\nQuantidade: ${item.quantity}\nPreço: R$:${item.price}\n\n`
         )
     }).join("");
     const total = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
